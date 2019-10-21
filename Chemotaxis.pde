@@ -1,14 +1,24 @@
- Bacteria [] colony = //jane;
+ Bacteria [] colony = new Bacteria [50]; //jane;
+ int i = colony.length;
  void setup()   
  {     
  	size(500,500);
  	//jane = new Bacteria(250,250); 
+ 	while(i>0) {
+ 		colony[i-1] = new Bacteria();
+ 		i--;
+ 	}
  	
  }   
  void draw()   
  {    
- 	jane.show();
- 	jane.move();   
+ 	background(192);
+ 	i = colony.length;
+ 	while(i>0) {
+ 		colony[i-1].show();
+ 		colony[i-1].move();
+ 		i--;
+ 	}
  	//background(192);
  }  
  class Bacteria    
@@ -33,12 +43,11 @@
 
  	}
  	void speedsss() {
- 		myXSpeed = (int)(Math.random()*4-2);
- 		myYSpeed = (int)(Math.random()*4-2);
+ 		myXSpeed = (int)(Math.random()*6-3);
+ 		myYSpeed = (int)(Math.random()*6-3);
  	}
  	void show() {
  		fill(myColor);
  		ellipse(myX,myY,30,30);
-
  	}
  }    
