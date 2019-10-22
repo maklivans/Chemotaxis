@@ -1,4 +1,4 @@
- Bacteria [] colony = new Bacteria [50]; //jane;
+ Bacteria [] colony = new Bacteria [100]; //jane;
  int i = colony.length;
  void setup()   
  {     
@@ -30,24 +30,34 @@
  		myX = 250;
  		myY = 250;
  		myColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
- 		speedsss();
+ 		myXSpeed = (int)(Math.random()*10-5);
+ 		myYSpeed = (int)(Math.random()*10-5);
  	}
  	void move() {
  		myX = myX + myXSpeed;
  		myY = myY + myYSpeed;
  		distanceCounter += 1;
- 		if (distanceCounter>=30) {
+ 		if (distanceCounter>=4) {
  			speedsss();
  			distanceCounter = 0;
  		}
 
  	}
  	void speedsss() {
- 		myXSpeed = (int)(Math.random()*6-3);
- 		myYSpeed = (int)(Math.random()*6-3);
+ 		if (mouseX>myX) {
+ 			myXSpeed = (int)(Math.random()*10-4);
+ 		} else if (mouseX<myX) {
+ 			myXSpeed = (int)(Math.random()*10-6);
+ 		}
+ 		if (mouseY>myY) {
+ 			myYSpeed = (int)(Math.random()*10-4);
+ 		} else if (mouseY<myY) {
+ 			myYSpeed = (int)(Math.random()*10-6);
+ 		}
+ 		
  	}
  	void show() {
  		fill(myColor);
- 		ellipse(myX,myY,30,30);
+ 		ellipse(myX,myY,5,5);
  	}
  }    
