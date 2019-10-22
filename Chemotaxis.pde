@@ -1,11 +1,11 @@
  Bacteria [] colony = new Bacteria [100]; //jane;
- int i = colony.length;
+ int i = colony.length-1;
  void setup()   
  {     
  	size(500,500);
  	//jane = new Bacteria(250,250); 
- 	while(i>0) {
- 		colony[i-1] = new Bacteria();
+ 	while(i>=0) {
+ 		colony[i] = new Bacteria();
  		i--;
  	}
  	
@@ -13,10 +13,10 @@
  void draw()   
  {    
  	background(192);
- 	i = colony.length;
- 	while(i>0) {
- 		colony[i-1].show();
- 		colony[i-1].move();
+ 	i = colony.length-1;
+ 	while(i>=0) {
+ 		colony[i].show();
+ 		colony[i].move();
  		i--;
  	}
  	//background(192);
